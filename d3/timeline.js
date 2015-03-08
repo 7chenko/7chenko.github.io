@@ -349,7 +349,7 @@ function timeline(domElement) {
             if (element.attr("class") == "interval") {
                 html = d.label + "<br>" + toYear(d.start) + " - " + toYear(d.end);
             } else {
-                html = d.label + "<br>" + d.start.toDateString();
+                html = d.label + "<br>" + d.start.toDateString().substring(4);
             }
             return html;
         }
