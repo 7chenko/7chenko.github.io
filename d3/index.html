@@ -82,6 +82,16 @@
     var domElement = "#timeline";
     var sourceFile = "csv.csv";
 
+    var rows = [{field_event_time: "2013-10-10", field_event_type: "First Identified Complaint"},
+                {field_event_time: "2013-11-11", field_event_type: "First Identified Jumbalaya"}];
+
+    var data = [];
+    for (var i = 0; i < rows.length; i++) {
+        data[i] = {start: rows[i].field_event_time, end: rows[i].field_event_time, label: rows[i].field_event_type};
+    }
+
+    console.log(data);
+
     // Read in the data and construct the timeline
     d3.csv(sourceFile, function(dataset) {
 

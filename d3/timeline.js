@@ -188,7 +188,7 @@ function timeline(domElement) {
         band.trackHeight = Math.min((band.h - band.trackOffset) / data.nTracks, 20);
         band.itemHeight = band.trackHeight * 0.8,
         band.parts = [],
-        band.instantWidth = 100; // arbitray value
+        band.instantWidth = 100; // arbitrary value
 
         band.xScale = d3.time.scale()
             .domain([data.minDate, data.maxDate])
