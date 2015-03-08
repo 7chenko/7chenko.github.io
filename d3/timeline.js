@@ -390,7 +390,7 @@ function timeline(domElement) {
             .scale(band.xScale)
             .orient(orientation || "bottom")
             .tickSize(6, 0)
-            .tickFormat(function (d) { return toMonth(d) + "/" + toYear(d); });
+            .tickFormat(function (d) { return getMonth(d) + "/" + toYear(d); });
 
         var xAxis = chart.append("g")
             .attr("class", "axis")
@@ -503,6 +503,10 @@ function timeline(domElement) {
         if (year > 0) return year.toString();
         if (bcString[0] == '-') return bcString + (-year);
         return (-year) + bcString;
+    }
+
+    function getMonth(date) {
+        return date.getUTCMonth() + 1;
     }
 
     return timeline;
